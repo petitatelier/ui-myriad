@@ -3,7 +3,9 @@
   --primary-bg-color: white;
   --secondary-text-color: lightskyblue;
   --primary-text-font: "Fira Sans Extra Condensed", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --primary-text-weight: 400;
   --headings-text-font: "Fira Sans Condensed", sans-serif;
+  --headings-text-weight: 500;
   --monospaced-text-font: "Fira Mono", monospace;
   --normal-text-size: 20px;
   --big-normal-text-size: 1.5rem;
@@ -11,8 +13,8 @@
 
 body {
   font-family: var(--primary-text-font);
+  font-weight: var(--primary-text-weight);
   font-size: var(--normal-text-size);
-  -webkit-font-smoothing: antialiased;
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
   margin: 0; }
@@ -41,8 +43,10 @@ header > a {
 
 main { margin-top: 3.5rem; padding: 1rem; }
 
-h1, h2 { font-family: var(--headings-text-font); }
-h1 { font-size: var(--big-normal-text-size); }
+h1, h2 {
+  font-family: var(--headings-text-font);
+  font-weight: var(--headings-text-weight); }
+h1 { font-size: 2rem; }
 
 .big { font-size: var(--big-normal-text-size); }
 

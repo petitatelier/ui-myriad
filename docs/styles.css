@@ -1,7 +1,9 @@
 :root {
   --primary-text-color: black;
   --primary-bg-color: white;
+  --primary-line-color: #dfe2e5;
   --secondary-text-color: lightskyblue;
+  --tertiary-text-color: lightgray;
   --primary-text-font: "Fira Sans Extra Condensed", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --primary-text-weight: 400;
   --headings-text-font: "Fira Sans Condensed", sans-serif;
@@ -27,6 +29,7 @@ body {
 body { transition: opacity ease-in 0.2s; }
 
 header {
+  background-color: var(--primary-bg-color);
   position: fixed; top: 0; left: 0;
   z-index: 4; width: 100%;
   min-height: 3rem; padding: 0.75rem 1rem;
@@ -58,10 +61,18 @@ table {
   border-collapse: collapse; border-spacing: 0;
   display: block; overflow: auto; width: 100%; }
 table tr {
-  border-top: 1px solid #c6cbd1; }
+  border-top: 1px solid var(--primary-line-color); }
+table thead, table tbody {
+  border-bottom: 2px solid var(--primary-line-color); }
 table tr:nth-child( 2n) {
   background-color: var(--secondary-bg-color); }
-table th, td {
-  border: 1px solid #dfe2e5;
-  padding: 6px 13px; }
-table th { font-weight: 600; }
+table th {
+  font-weight: bold; color: var(--tertiary-text-color); }
+table th, table td {
+  border: 1px solid var(--primary-line-color);
+  padding: 0.4rem 1rem; }
+table th[scope=rowgroup] {
+  background-color: var(--secondary-text-color);
+  text-align: start; color: var(--primary-text-color); }
+table th[scope=row] {
+  text-align: start; color: var(--primary-text-color); }

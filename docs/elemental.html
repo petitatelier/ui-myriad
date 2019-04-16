@@ -20,40 +20,218 @@
 
   <main class="vfill">
     <h1>Elemental components</h1>
-    <p>…</p>
+    <p>Desired features of elemental data components, as they can be found in data intensive enterprise applications.</p>
+
+    <h2>Grids</h2>
     <table>
+    <colgroup>
+      <col width="2">
+      <col width="2">
+      <col width="5">
+      <col width="1">
+      <col width="1">
+    </colgroup>
     <thead>
     <tr>
-      <th>Polyfill</th>
-      <th align="center">Edge</th>
-      <th align="center">IE11+</th>
-      <th align="center">Chrome*</th>
-      <th align="center">Firefox*</th>
-      <th align="center">Safari 9+*</th>
-      <th align="center">Chrome Android*</th>
-      <th align="center">Mobile Safari*</th>
+      <th>Component</th>
+      <th>Features</th>
+      <th>Description</th>
+      <th>Usage</th>
+      <th>Status</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>Custom Elements</td>
-      <td align="center">✓</td>
-      <td align="center">✓</td>
-      <td align="center">✓</td>
-      <td align="center">✓</td>
-      <td align="center">✓</td>
-      <td align="center">✓</td>
+      <th rowspan="11" scope="rowgroup">Grid</td>
+      <th scope="row">Sets of columns</td>
+      <td>dynamic selection of a subset of all available columns, including predefined sets, a set selector toggle and a default set</td>
+      <td align="center">frequent</td>
       <td align="center">✓</td>
     </tr>
     <tr>
-      <td>Shady CSS/DOM</td>
+      <th scope="row">Persistent settings</td>
+      <td>per user persistence of the selection of columns and column order (applicative feature)</td>
+      <td align="center">frequent</td>
       <td align="center">✓</td>
+    </tr>
+    <tr>
+      <th scope="row">Highlight current row</td>
+      <td>mark and highlight a row as the <em>current row</em>, by clicking on its header; implicitely select the row; additionally, ability to move the selection between rows with keyboard; intended to ease reading when there are many columns</td>
+      <td align="center">frequent</td>
       <td align="center">✓</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Alternate rows</td>
+      <td>alternative background of rows, to ease reading</td>
+      <td align="center">frequent</td>
       <td align="center">✓</td>
+    </tr>
+    <tr>
+      <th scope="row">Frozen columns</td>
+      <td>set of frozen columns (at design time at least), in a pane to the left of the grid</td>
+      <td align="center">frequent</td>
       <td align="center">✓</td>
+    </tr>
+    <tr>
+      <th scope="row">Scrollable</td>
+      <td>performant horizontal and vertical scroll in given viewport, with large number of columns (a hundred) and rows (many hundreds)</td>
+      <td align="center">frequent</td>
       <td align="center">✓</td>
+    </tr>
+    <tr>
+      <th scope="row">Flex layout</td>
+      <td>ability to grow table to all available space in flex layout</td>
+      <td align="center">frequent</td>
       <td align="center">✓</td>
+    </tr>
+    <tr>
+      <th scope="row">Filter/search</td>
+      <td>only display rows matching a specified search pattern, masking other rows; allow for domain-specific syntaxic sugar</td>
+      <td align="center">frequent</td>
       <td align="center">✓</td>
+    </tr>
+    <tr>
+      <th scope="row">Pagination</td>
+      <td>pagination of a recordset, by a fixed number of records per page; navigation between pages / to start / to end</td>
+      <td align="center">infrequent</td>
+      <td align="center">✓</td>
+    </tr>
+    <tr>
+      <th scope="row">Multi-column sorting</td>
+      <td>sorting of contents of one or more columns, in ascendent or descendent lexical order</td>
+      <td align="center">frequent</td>
+      <td align="center">✓</td>
+    </tr>
+    <tr>
+      <th scope="row">Re-order columns</td>
+      <td>ability to re-order columns dynamically</td>
+      <td align="center">frequent</td>
+      <td align="center">✓</td>
+    </tr>
+    <tr>
+      <th rowspan="3" scope="rowgroup">Grid with Export</td>
+      <td scope="row" colspan="4">Inherits Grid</td>
+    </tr>
+    <tr>
+      <th scope="row">Export CSV</td>
+      <td>export the grid contents to CSV format</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th scope="row">Export Excel</td>
+      <td>export the grid contents to Excel format, retaining grouping/subgrid/detail and formatting as much as reasonably feasible</td>
+      <td align="center">infrequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th rowspan="3" scope="rowgroup">Grid with Grouping</td>
+      <td scope="row" colspan="4">Inherits Grid Export</td>
+    </tr>
+    <tr>
+      <th scope="row">Collapsable static groups</td>
+      <td>design-time partitioning of the rows by function; group the rows of every partition chunk in a collapsable section with a header, that would display the result of the partition function; handle multiple levels of grouping, when the partition function returns a tuple</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th scope="row">Collapsable dynamic groups</td>
+      <td>create dynamic groups with drag and drop of a column header to a <em>dropzone</em> (in the header, for instance) and then partition the rows by the distinct values of that column; then, same behavior as static groups</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th rowspan="2" scope="rowgroup">Grid with Subgrid</td>
+      <td scope="row" colspan="4">Inherits Grid Export</td>
+    </tr>
+    <tr>
+      <th scope="row">Collapsable Subgrid</td>
+      <td>Subgrid linked to parent row in master/detail relationship</td>
+      <td align="center">infrequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th rowspan="2" scope="rowgroup">Grid with Detail</td>
+      <td scope="row" colspan="4">Inherits Grid Export</td>
+    </tr>
+    <tr>
+      <th scope="row">Collapsable detail section</td>
+      <td>with any content</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th rowspan="4" scope="rowgroup">Editable Grid</td>
+      <td scope="row" colspan="4">Inherits Grid Export</td>
+    </tr>
+    <tr>
+      <th scope="row">Mutation context</td>
+      <td>Ability to express whether updates are saved/canceled immediately, or batched in a transaction; in case of transactional updates, buttons should allow to Save/Cancel the transaction</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th scope="row">Edition of cell content</td>
+      <td>Edit a single cell of a row and save/cancel the update on Enter, blur or Esc, either immediately or batched in a transaction</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th scope="row">Highlight updates</td>
+      <td>In transactional mutation context, highlight the cells that were updated, but not yet transacted</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th rowspan="5" scope="rowgroup">Actionable Grid</td>
+      <td scope="row" colspan="4">Inherits Editable Grid</td>
+    </tr>
+    <tr>
+      <th scope="row">Multi-selection of rows</td>
+      <td>Manual selection of multiple rows, consecutive and/or non-consecutive, in order to apply an action on all of them; note that selection of <em>consecutive</em> rows might actually lead to <em>non-consecutive</em> selection of rows, when a filter is in effect at time of selection and later removed</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th scope="row">Persistent multi-selection</td>
+      <td>Multiple selection should be remembered when applying/removing a filter — that is, rows should remain selected, even when they would be masked by a filter in effect</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th scope="row">Start activity with selected rows</td>
+      <td>Action over the selected rows, either <em>in place</em> (see Bulk Editable Grid below) or in subsequent dialog; requires ability to retrieve the selected rows from application context</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th scope="row">Search</td>
+      <td>Plain text search in the grid, highlighting the results; allows to visually scan the rows and eventually manually add some of them to the multiselection; no need to add them to the selection directly, this can be achieved with filtering and multi-selection of consecutive rows</td>
+      <td align="center">infrequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th rowspan="4" scope="rowgroup">Bulk Editable Grid</td>
+      <td scope="row" colspan="4">Inherits Actionable Grid</td>
+    </tr>
+    <tr>
+      <th scope="row">Edit selected rows</td>
+      <td>Edit any cell and override the values of the same updated column in every selected row; multiple columns could be edited in turn. Might be implemented as an additional row, appearing below/on top of the bulk editable grid; this additional row would contain the same set of columns, either initially empty, or containing the value that would be found identical in every row.</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th scope="row">Edit selected column</td>
+      <td>Update the value of every <em>visible</em> row of a selected column — that is, while ignoring rows that would be <em>masked</em> by a filter in effect — with a new value, at once. Common use case, similar to: i. search/replace in a column (search is handled with filtering); ii. the edition of selected rows, but without need to select every row first.</td>
+      <td align="center">frequent</td>
+      <td align="center"> </td>
+    </tr>
+    <tr>
+      <th scope="row">Paste from Excel</td>
+      <td>Funky feature! Ability to copy & paste cells from an Excel document into the grid, starting at current highlighted row; usually after a copy & paste of selected rows into Excel document, and subsequent update of contents in Excel</td>
+      <td align="center">rare</td>
+      <td align="center"> </td>
     </tr>
     </tbody>
     </table>

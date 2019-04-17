@@ -22,6 +22,7 @@
     <h1>Elemental components</h1>
     <p>Desired features of elemental data components, as found in data intensive applications
       — where user wants to see, explore and manipulate great quantity of data at once.</p>
+    <p>TODO: Usage: when the component is in scope, specifies …</p>
 
     <h2>Grids</h2>
     <table>
@@ -47,80 +48,80 @@
       <th scope="row">Sets of columns</td>
       <td>display subset of all available columns, selected by the user, either from predefined named sets or custom selection in a column list; initial display of a default named subset, or of all columns when not specified</td>
       <td align="center">frequent / essential</td>
-      <td align="center">✓</td>
+      <td align="center">✓~~</td>
     </tr>
     <tr>
       <th scope="row">Persistent settings</td>
       <td>per user persistence of the selection of columns and column order; implies the ability to retrieve and set the grid configuration from the application context</td>
       <td align="center">frequent / essential</td>
-      <td align="center">✓</td>
+      <td align="center">✓··</td>
     </tr>
     <tr>
       <th scope="row">Highlight current row</td>
       <td>mark and highlight a row as the <em>current row</em>, by clicking on its row header or in any of its cells; implicitely selects the row; additionally, ability to move the selection between rows with keyboard; intended to ease reading when there are many columns</td>
       <td align="center">frequent / important</td>
-      <td align="center">✓</td>
+      <td align="center">✓✓✓</td>
     </tr>
 
     <tr>
       <th scope="row">Alternate rows</td>
       <td>alternate background color of rows, to ease reading when there are many columns; nice-to-have, if current row can be defined and is highlighted</td>
       <td align="center">frequent / nice-to-have</td>
-      <td align="center">✓</td>
+      <td align="center">✓✓✓</td>
     </tr>
     <tr>
       <th scope="row">Frozen columns</td>
       <td>set of frozen columns (configured at design time, at least), in a pane to the left of the grid</td>
       <td align="center">frequent / important</td>
-      <td align="center">✓</td>
+      <td align="center">✓✓✓</td>
     </tr>
     <tr>
       <th scope="row">Scrollable</td>
       <td>performant horizontal and vertical scroll in given viewport, with large number of columns (a hundred) and rows (many hundreds); consider virtual/infinite scrolling implementation</td>
       <td align="center">frequent / essential</td>
-      <td align="center">✓</td>
+      <td align="center">·✓✓</td>
     </tr>
     <tr>
       <th scope="row">Flex layout</td>
       <td>ability to grow the grid to all available space in flex layout</td>
       <td align="center">frequent / essential</td>
-      <td align="center">✓</td>
+      <td align="center">✓✓✓</td>
     </tr>
     <tr>
-      <th scope="row">Filter/Search</td>
+      <th scope="row">Search Filter</td>
       <td>only display rows matching a user-specified search pattern, masking other rows; search in all columns, or limit search to specified columns (<code>instrument:cash</code>); full-text search; allow for globs/wildchar, multiple inclusive/exclusive search patterns, and domain-specific syntaxic sugar, applying search to all columns of a certain <em>kind</em> (<code>currency:EUR</code>)</td>
       <td align="center">frequent / essential</td>
-      <td align="center">✓</td>
+      <td align="center">·✓✓</td>
     </tr>
     <tr>
-      <th scope="row">Pagination or Automatic fetching</td>
+      <th scope="row">Pagination or Automatic fetching/Lazy loading</td>
       <td>pagination of a recordset, by a fixed number of records per page; navigation between pages / to start / to end; pagination is infrequent, usually users want all data or automatic fetching of additional data, when scrolling or jumping to end</td>
-      <td align="center">infrequent / nice-to-have</td>
-      <td align="center">✓</td>
+      <td align="center">infrequent / important</td>
+      <td align="center">✓✓✓</td>
     </tr>
     <tr>
-      <th scope="row">Hidden / Derived columns</td>
-      <td>Ability to hide columns from user; eventually to add new calculated columns; those columns serve for the <em>Clustering / Forced storting</em> or <em>Static grouping</em> of rows; they should not participate in filtering/searching.</td>
+      <th scope="row">Derived columns</td>
+      <td>Ability to add calculated columns, eventually hidden, by a function that receives every row; defined at design-time; those columns serve for the <em>Clustering / Forced storting</em> or <em>Static grouping</em> of rows; they should not participate in filtering/searching; if they are hidden, they do not appear in list of columns available to the user (in selection of a <em>subset of columns</em>).</td>
       <td align="center">frequent / essential</td>
-      <td align="center">✓</td>
+      <td align="center">✓✓·</td>
     </tr>
     <tr>
       <th scope="row">Clustering / Forced sorting</td>
       <td>sorting of rows by the contents of one or more columns, possibly hidden and/or calculated, in ascending or descending lexical order, that always takes precedence over user-defined <em>multi-column sorting</em> (see next feature); used to create clusters of rows, eventually to forcibly place them at start or end of grid (cluster of cash positions at end, summary row at top); the sort key might as well be used to statically group the rows (see <em>Grid with Grouping</em> component below)</td>
       <td align="center">frequent / essential</td>
-      <td align="center">✓</td>
+      <td align="center">✓··</td>
     </tr>
     <tr>
       <th scope="row">Multi-column sorting</td>
       <td>user-defined sorting of rows by the contents of one or more columns, in ascending or descending lexical order</td>
       <td align="center">frequent / important</td>
-      <td align="center">✓</td>
+      <td align="center">✓✓✓</td>
     </tr>
     <tr>
       <th scope="row">Re-order columns</td>
       <td>ability to re-order columns dynamically, by drag &amp; drop of the column header to a new place; ability to select a set of columns, as well as export to CSV/Excel, both alleviate the need for this <em>column re-ordering</em> feature</td>
       <td align="center">infrequent / nice-to-have</td>
-      <td align="center">✓</td>
+      <td align="center">✓✓✓</td>
     </tr>
     <tr>
       <th rowspan="3" scope="rowgroup">Grid with Export</td>
@@ -130,13 +131,13 @@
       <th scope="row">Export CSV</td>
       <td>export the grid contents to CSV format</td>
       <td align="center">frequent / important</td>
-      <td align="center">✓</td>
+      <td align="center">✓✓·</td>
     </tr>
     <tr>
       <th scope="row">Export Excel</td>
       <td>export the grid contents to Excel format, retaining grouping/subgrid/detail and formatting as much as reasonably feasible — also involved in <em>Paste from Excel</em> use case of Bulk Editable Grid</td>
       <td align="center">infrequent</td>
-      <td align="center"> </td>
+      <td align="center">··?</td>
     </tr>
     <tr>
       <th rowspan="4" scope="rowgroup">Grid with Grouping</td>
@@ -146,19 +147,19 @@
       <th scope="row">Collapsable static groups</td>
       <td>design-time partitioning of the rows by function; group the rows of every partition chunk in a collapsable section with a header, that would display the result of the partition function; handle multiple levels of grouping, when the partition function returns a tuple; as a workaround, we often add dumb rows when preparing the data, as well as hidden derived columns and forced sorting, to cluster the rows; special case for virtual/infinite scrolling implementation</td>
       <td align="center">frequent / important</td>
-      <td align="center"> </td>
+      <td align="center">··✓</td>
     </tr>
     <tr>
       <th scope="row">Collapsable dynamic groups</td>
       <td>create dynamic groups with drag and drop of a column header to a <em>drop zone</em> (in the header, for instance) and then partition the rows by the distinct values of that column; then, same behavior as static groups; special case for virtual/infinite scrolling implementation</td>
       <td align="center">infrequent / important</td>
-      <td align="center"> </td>
+      <td align="center">···</td>
     </tr>
     <tr>
       <th scope="row">Aggregate summary rows</td>
       <td>calculate aggregate summary rows for every static group, with a reducing function, defined at design-time; aggregate summary rows should not participate in sorting and filtering/searching; their contents should not be affected by filtering, but should update when their dependent cells are edited</td>
       <td align="center">infrequent / important</td>
-      <td align="center"> </td>
+      <td align="center">✓··</td>
     </tr>
     <tr>
       <th rowspan="2" scope="rowgroup">Grid with Subgrid</td>
@@ -168,7 +169,7 @@
       <th scope="row">Collapsable Subgrid</td>
       <td>Subgrid linked to parent row in master/detail relationship; if data is in-band, an additional column could embed the subgrid of every row; special case for virtual/infinite scrolling implementation; we challenged the use cases and proposed alternative designs; <em>Grid with Detail</em> component is also a candidate solution</td>
       <td align="center">rare / non-feature</td>
-      <td align="center"> </td>
+      <td align="center">··✓</td>
     </tr>
     <tr>
       <th rowspan="2" scope="rowgroup">Grid with Detail</td>
@@ -178,7 +179,7 @@
       <th scope="row">Collapsable detail section</td>
       <td>with any content, using the full width of a row; if data is in-band, an additional column could embed the detail section of every row, which would be any markup; special case for virtual/infinite scrolling implementation</td>
       <td align="center">infrequent / important</td>
-      <td align="center"> </td>
+      <td align="center">··✓</td>
     </tr>
     <tr>
       <th rowspan="5" scope="rowgroup">Editable Grid</td>
@@ -188,25 +189,25 @@
       <th scope="row">Mutation context</td>
       <td>Ability to express whether updates are saved/canceled immediately, or batched in a transaction; in this last case, Save/Cancel buttons should allow to transact/dismiss the batch of updates</td>
       <td align="center">frequent / important</td>
-      <td align="center"> </td>
+      <td align="center">·~~</td>
     </tr>
     <tr>
       <th scope="row">Edition of cell</td>
       <td>Edit content of a single cell; save or cancel the update, on Enter/blur or Esc</td>
       <td align="center">frequent / important</td>
-      <td align="center"> </td>
+      <td align="center">·✓✓</td>
     </tr>
     <tr>
       <th scope="row">Row deletion</td>
       <td>Deletion of a single row; confirm/cancel deletion</td>
       <td align="center">frequent / important</td>
-      <td align="center"> </td>
+      <td align="center">·✓✓</td>
     </tr>
     <tr>
       <th scope="row">Highlight updates</td>
       <td>In transactional mutation context, visually identify the cells contents that were updated, but not yet transacted; useful visual aid, improves editing experience and data quality</td>
       <td align="center">frequent / important</td>
-      <td align="center"> </td>
+      <td align="center">···</td>
     </tr>
     <tr>
       <th rowspan="6" scope="rowgroup">Actionable Grid</td>
@@ -216,31 +217,31 @@
       <th scope="row">Multi-selection of rows</td>
       <td>Manual selection of multiple rows, consecutive and/or non-consecutive, in order to apply an action on all of them; note that the selection of <em>visually consecutive</em> rows might actually lead to an actual <em>non-consecutive</em> selection of rows, when a filter is in effect at time of selection and later removed</td>
       <td align="center">frequent</td>
-      <td align="center"> </td>
+      <td align="center">·✓✓</td>
     </tr>
     <tr>
       <th scope="row">Persistent multi-selection</td>
       <td>Multiple selection should be remembered when applying/removing a filter — that is, rows should remain selected, even when they would be masked by a filter in effect</td>
       <td align="center">frequent</td>
-      <td align="center"> </td>
+      <td align="center">·✓✓</td>
     </tr>
     <tr>
       <th scope="row">Deletion of selected rows</td>
       <td>Delete the selected rows; confirm/cancel the deletion, if mutation context is immediate, otherwise delete without confirmation</td>
       <td align="center">infrequent</td>
-      <td align="center"> </td>
+      <td align="center">·✓✓</td>
     </tr>
     <tr>
       <th scope="row">Start activity with selected rows</td>
       <td>Activity over the selected rows, either <em>in place</em> (see <em>Delete rows</em> feature or <em>Bulk Editable Grid</em> component below), or in subsequent applicative workflow; requires ability to retrieve the selected rows from the application context; consider case where selected rows might be filtered out and masked, when user starts the activity</td>
       <td align="center">infrequent</td>
-      <td align="center"> </td>
+      <td align="center">·✓✓</td>
     </tr>
     <tr>
       <th scope="row">Search</td>
       <td>Plain text search in the grid, highlighting the results; allows to visually scan the rows and eventually manually add some of them to the multiselection; no need to add them to the selection directly, this can be achieved with filtering and multi-selection of consecutive rows</td>
-      <td align="center">infrequent</td>
-      <td align="center"> </td>
+      <td align="center">infrequent / nice-to-have</td>
+      <td align="center">···</td>
     </tr>
     <tr>
       <th rowspan="4" scope="rowgroup">Bulk Editable Grid</td>
@@ -249,20 +250,20 @@
     <tr>
       <th scope="row">Edit selected rows</td>
       <td>Edit any cell and override the values of the same updated column in every selected row; multiple columns could be edited in turn. Might be implemented as an additional row, appearing below/on top of the bulk editable grid; this additional row would contain the same set of columns, either initially empty, or containing the value that would be found identical in every row.</td>
-      <td align="center">frequent</td>
-      <td align="center"> </td>
+      <td align="center">frequent / important</td>
+      <td align="center">·✓·</td>
     </tr>
     <tr>
       <th scope="row">Edit selected column</td>
       <td>Update the value of every <em>visible</em> row of a selected column — that is, while ignoring rows that would be <em>masked</em> by a filter in effect — with a new value, at once. Common use case, similar to: i. search/replace in a column (search is handled with filtering); ii. the edition of selected rows, but without need to select every row first.</td>
-      <td align="center">infrequent</td>
-      <td align="center"> </td>
+      <td align="center">infrequent / nice-to-have</td>
+      <td align="center">·~·</td>
     </tr>
     <tr>
       <th scope="row">Paste from Excel</td>
       <td>Ability to copy &amp; paste cells from an Excel document into the grid, starting at current highlighted row. Feature available in a Silverlight grid component and part of a clever workflow: user would copy &amp; paste of selected rows of the grid into Excel document, update the contents in Excel and copy &amp; paste the result back to the grid. Could easily be challenged, because of the risk of massive errors in case of a row offset, and accomplished in other ways in the grid / or with ad-hoc applicative features.</td>
-      <td align="center">rare</td>
-      <td align="center"> </td>
+      <td align="center">rare / nice-to-have</td>
+      <td align="center">···</td>
     </tr>
     </tbody>
     </table>
